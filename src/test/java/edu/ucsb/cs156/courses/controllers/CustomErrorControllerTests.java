@@ -47,6 +47,21 @@ public class CustomErrorControllerTests {
   }
 
   @Test
+  public void handleError_setsUnknownError_forInvalidStatusCode() {
+    CustomErrorController controller = new CustomErrorController();
+    MockHttpServletRequest request = new MockHttpServletRequest();
+    Model model = new ConcurrentModel();
+
+    request.setAttribute(RequestDispatcher.ERROR_STATUS_CODE, 999);
+
+    String viewName = controller.handleError(request, model);
+
+    assertEquals("custom-error", viewName);
+    assertEquals(999, model.getAttribute("status"));
+    assertEquals("Unknown Error", model.getAttribute("error"));
+  }
+
+  @Test
   public void handleError_setsDefaults_whenNoAttributes() {
     CustomErrorController controller = new CustomErrorController();
     MockHttpServletRequest request = new MockHttpServletRequest();
