@@ -9,7 +9,6 @@ import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * GradeHistory - Entity for grade history data. Each object represents one row from the CSV files
@@ -22,7 +21,6 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @Entity(name = "historygrade")
 @Table(
     uniqueConstraints = {

@@ -1,6 +1,9 @@
 package edu.ucsb.cs156.courses.controllers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import jakarta.servlet.RequestDispatcher;
 import org.junit.jupiter.api.Test;
@@ -34,6 +37,13 @@ public class CustomErrorControllerTests {
     assertEquals(
         "This is a test exception to trigger the custom error page",
         model.getAttribute("exceptionMessage"));
+
+    String stackTrace = (String) model.getAttribute("stackTrace");
+
+    assertNotNull(stackTrace);
+    assertFalse(stackTrace.isEmpty());
+    assertTrue(stackTrace.contains("RuntimeException"));
+    assertTrue(stackTrace.contains("This is a test exception to trigger the custom error page"));
   }
 
   @Test
