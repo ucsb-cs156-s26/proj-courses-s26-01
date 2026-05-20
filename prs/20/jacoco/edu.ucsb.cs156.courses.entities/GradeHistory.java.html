@@ -9,7 +9,6 @@ import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * GradeHistory - Entity for grade history data. Each object represents one row from the CSV files
@@ -22,7 +21,6 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @Entity(name = &quot;historygrade&quot;)
 @Table(
     uniqueConstraints = {
@@ -42,13 +40,13 @@ public class GradeHistory {
   private int count;
 
   public String getSubjectArea() {
-<span class="fc bfc" id="L45" title="All 2 branches covered.">    if (course == null) return null;</span>
-<span class="fc" id="L46">    return course.substring(0, 8).trim();</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">    if (course == null) return null;</span>
+<span class="fc" id="L44">    return course.substring(0, 8).trim();</span>
   }
 
   public String getCourseNum() {
-<span class="fc bfc" id="L50" title="All 2 branches covered.">    if (course == null) return null;</span>
-<span class="fc" id="L51">    return course.substring(8).trim();</span>
+<span class="fc bfc" id="L48" title="All 2 branches covered.">    if (course == null) return null;</span>
+<span class="fc" id="L49">    return course.substring(8).trim();</span>
   }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
