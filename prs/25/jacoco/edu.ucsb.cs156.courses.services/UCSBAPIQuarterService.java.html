@@ -82,7 +82,7 @@ public class UCSBAPIQuarterService {
   }
 
   private void validateCurrentQuarterYYYYQ(String currentQuarterYYYYQ) {
-<span class="pc bpc" id="L85" title="1 of 2 branches missed.">    if (currentQuarterYYYYQ == null</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">    if (currentQuarterYYYYQ == null</span>
 <span class="fc bfc" id="L86" title="All 2 branches covered.">        || currentQuarterYYYYQ.isBlank()</span>
 <span class="fc bfc" id="L87" title="All 2 branches covered.">        || !currentQuarterYYYYQ.matches(&quot;\\d{5}&quot;)) {</span>
 <span class="fc" id="L88">      throw unableToComputeEndQtrException(currentQuarterYYYYQ);</span>
@@ -90,8 +90,8 @@ public class UCSBAPIQuarterService {
 
     try {
 <span class="fc" id="L92">      Quarter.yyyyqToInt(currentQuarterYYYYQ);</span>
-<span class="nc" id="L93">    } catch (IllegalArgumentException e) {</span>
-<span class="nc" id="L94">      throw unableToComputeEndQtrException(currentQuarterYYYYQ);</span>
+<span class="fc" id="L93">    } catch (IllegalArgumentException e) {</span>
+<span class="fc" id="L94">      throw unableToComputeEndQtrException(currentQuarterYYYYQ);</span>
 <span class="fc" id="L95">    }</span>
 <span class="fc" id="L96">  }</span>
 
@@ -189,7 +189,7 @@ public class UCSBAPIQuarterService {
   }
 
   public boolean quarterYYYYQInRange(String quarterYYYYQ) throws Exception {
-<span class="nc" id="L192">    return quarterYYYYQInRange(quarterYYYYQ, getEndQtrYYYYQ());</span>
+<span class="fc" id="L192">    return quarterYYYYQInRange(quarterYYYYQ, getEndQtrYYYYQ());</span>
   }
 
   boolean quarterYYYYQInRange(String quarterYYYYQ, String endQtrYYYYQ) {
@@ -218,7 +218,7 @@ public class UCSBAPIQuarterService {
 <span class="fc" id="L218">    String currQtr = getCurrentQuarterYYYYQ();</span>
 <span class="fc" id="L219">    String endQtr = getEndQtrYYYYQ(currQtr);</span>
 
-<span class="pc bpc" id="L221" title="1 of 2 branches missed.">    if (currQtr.compareTo(endQtr) &lt;= 0) {</span>
+<span class="fc bfc" id="L221" title="All 2 branches covered.">    if (currQtr.compareTo(endQtr) &lt;= 0) {</span>
 <span class="fc" id="L222">      Quarter.quarterList(currQtr, endQtr)</span>
 <span class="fc" id="L223">          .forEach(quarter -&gt; activeQuarters.add(quarter.getYYYYQ()));</span>
     }
