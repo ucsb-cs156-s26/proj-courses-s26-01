@@ -309,4 +309,41 @@ describe("AppNavbar tests", () => {
       await screen.findByTestId("appnavbar-course-over-time-instructor-search"),
     ).toBeInTheDocument();
   });
+
+  test("renders the Enrollment History menu correctly", async () => {
+    const currentUser = currentUserFixtures.userOnly;
+    const systemInfo = systemInfoFixtures.showingBoth;
+
+    const doLogin = vi.fn();
+
+    render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <AppNavbar
+            currentUser={currentUser}
+            systemInfo={systemInfo}
+            doLogin={doLogin}
+          />
+        </MemoryRouter>
+      </QueryClientProvider>,
+    );
+
+    expect(
+      await screen.findByTestId("appnavbar-course-infos-dropdown"),
+    ).toBeInTheDocument();
+    const dropdown = screen.getByTestId("appnavbar-course-infos-dropdown");
+    const aElement = dropdown.querySelector("a");
+    expect(aElement).toBeInTheDocument();
+    aElement?.click();
+
+    const enrollmentHistoryLink = await screen.findByTestId(
+      "appnavbar-enrollment-history-search",
+    );
+    expect(enrollmentHistoryLink).toBeInTheDocument();
+    expect(enrollmentHistoryLink).toHaveAttribute(
+      "href",
+      "/enrollmenthistory/search",
+    );
+    expect(enrollmentHistoryLink).toHaveTextContent("Enrollment History");
+  });
 });

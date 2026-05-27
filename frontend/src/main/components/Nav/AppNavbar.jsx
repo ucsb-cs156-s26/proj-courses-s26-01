@@ -104,6 +104,12 @@ export default function AppNavbar({
                 >
                   GE Search
                 </NavDropdown.Item>
+                <NavDropdown.Item
+                  href="/enrollmenthistory/search"
+                  data-testid="appnavbar-enrollment-history-search"
+                >
+                  Enrollment History
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
 

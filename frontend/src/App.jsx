@@ -27,6 +27,7 @@ import CourseOverTimeBuildingsIndexPage from "main/pages/CourseOverTime/CourseOv
 import GeneralEducationSearchPage from "main/pages/GeneralEducation/Search/GeneralEducationSearchPage";
 import CourseDetailsIndexPage from "main/pages/CourseDetails/CourseDetailsIndexPage";
 import CSVDownloadsPage from "main/pages/CSV/CSVDownloadsPage";
+import EnrollmentHistoryPage from "main/pages/EnrollmentHistory/EnrollmentHistoryPage";
 
 function App() {
   const { data: currentUser } = useCurrentUser();
@@ -117,6 +118,11 @@ function App() {
           exact
           path="/generaleducation/search"
           element={<GeneralEducationSearchPage />}
+        />
+        <Route
+          exact
+          path="/enrollmenthistory/search"
+          element={<EnrollmentHistoryPage />}
         />
         <Route exact path="/downloads" element={<CSVDownloadsPage />} />
       </Routes>
