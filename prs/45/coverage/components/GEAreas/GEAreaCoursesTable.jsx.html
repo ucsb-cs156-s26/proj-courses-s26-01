@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.14% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">7.14% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,31 +121,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -162,12 +162,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,31 +175,31 @@
 import OurTable from "main/components/OurTable";
 import { yyyyqToQyy } from "main/utils/quarterUtilities";
 &nbsp;
-const getGeneralEducationAreas = <span class="fstat-no" title="function not covered" >(c</span>ourse) =&gt; {
-  const areas = <span class="cstat-no" title="statement not covered" >course.generalEducation;</span>
-<span class="cstat-no" title="statement not covered" >  if (!areas || !Array.isArray(areas) || areas.length === 0) {</span>
-<span class="cstat-no" title="statement not covered" >    return "";</span>
+const getGeneralEducationAreas = (course) =&gt; {
+  const areas = course.generalEducation;
+  if (!areas || !Array.isArray(areas) || areas.length === 0) {
+    return "";
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return areas</span>
-    .map(<span class="fstat-no" title="function not covered" >(a</span>rea) =&gt; {
-<span class="cstat-no" title="statement not covered" >      if (!area) {</span>
-<span class="cstat-no" title="statement not covered" >        return "";</span>
+  return areas
+    .map((area) =&gt; {
+      if (!area) {
+        return "";
       }
-<span class="cstat-no" title="statement not covered" >      if (typeof area === "string") {</span>
-<span class="cstat-no" title="statement not covered" >        return area;</span>
+      if (typeof area === "string") {
+        return area;
       }
-<span class="cstat-no" title="statement not covered" >      return area.geCode ? area.geCode.trim() : area.toString();</span>
+      return area.geCode ? area.geCode.trim() : area.toString();
     })
     .filter(Boolean)
     .join(", ");
 };
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >GEAreaCoursesTable({</span> courses }) {
-  const columns = <span class="cstat-no" title="statement not covered" >[</span>
+export default function GEAreaCoursesTable({ courses }) {
+  const columns = [
     {
       Header: "Quarter",
-      cell: <span class="fstat-no" title="function not covered" >({</span> cell }<span class="cstat-no" title="statement not covered" >) =&gt; yyyyqToQyy(cell.row.original.quarter),</span>
+      cell: ({ cell }) =&gt; yyyyqToQyy(cell.row.original.quarter),
       id: "quarter",
     },
     {
@@ -216,12 +216,12 @@ export default function <span class="fstat-no" title="function not covered" >GEA
     },
     {
       Header: "General Education Areas",
-      cell: <span class="fstat-no" title="function not covered" >({</span> row }) =&gt; <span class="cstat-no" title="statement not covered" >getGeneralEducationAreas(row.original),</span>
+      cell: ({ row }) =&gt; getGeneralEducationAreas(row.original),
       id: "generalEducationAreas",
     },
   ];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;OurTable data={courses} columns={columns} testid="GEAreaCoursesTable" /&gt;
   );
 }
@@ -232,7 +232,7 @@ export default function <span class="fstat-no" title="function not covered" >GEA
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-28T00:41:42.763Z
+                at 2026-05-28T05:45:24.693Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

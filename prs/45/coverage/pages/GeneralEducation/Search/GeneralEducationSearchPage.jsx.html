@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.63% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,29 +122,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -177,7 +177,7 @@ export default function GeneralEducationSearchPage() {
   const [courses, setCourses] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
 &nbsp;
-  const objectToAxiosParams = <span class="fstat-no" title="function not covered" >(q</span>uery) =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  const objectToAxiosParams = (query) =&gt; ({
     url: "/api/public/primariesge",
     params: {
       qtr: query.quarter,
@@ -185,15 +185,15 @@ export default function GeneralEducationSearchPage() {
     },
   });
 &nbsp;
-  const onSuccess = <span class="fstat-no" title="function not covered" >(c</span>ourseResults) =&gt; {
-<span class="cstat-no" title="statement not covered" >    setCourses(courseResults);</span>
-<span class="cstat-no" title="statement not covered" >    setHasSearched(true);</span>
+  const onSuccess = (courseResults) =&gt; {
+    setCourses(courseResults);
+    setHasSearched(true);
   };
 &nbsp;
   const mutation = useBackendMutation(objectToAxiosParams, { onSuccess }, []);
 &nbsp;
-  const fetchGEAreaJSON = <span class="fstat-no" title="function not covered" >(_</span>event, query) =&gt; {
-<span class="cstat-no" title="statement not covered" >    mutation.mutate(query);</span>
+  const fetchGEAreaJSON = (_event, query) =&gt; {
+    mutation.mutate(query);
   };
 &nbsp;
   return (
@@ -202,17 +202,17 @@ export default function GeneralEducationSearchPage() {
         &lt;h5&gt;UCSB General Education Search&lt;/h5&gt;
         &lt;GEAreaSearchForm fetchJSON={fetchGEAreaJSON} /&gt;
 &nbsp;
-        {mutation.isLoading<span class="branch-1 cbranch-no" title="branch not covered" > &amp;&amp; (</span>
+        {mutation.isLoading &amp;&amp; (
           &lt;div className="text-center"&gt;Loading courses...&lt;/div&gt;
         )}
 &nbsp;
-        {!mutation.isLoading &amp;&amp; hasSearched &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >courses.length === <span class="branch-3 cbranch-no" title="branch not covered" >0 &amp;&amp; (</span></span>
+        {!mutation.isLoading &amp;&amp; hasSearched &amp;&amp; courses.length === 0 &amp;&amp; (
           &lt;div className="text-center mt-3"&gt;
             &lt;p&gt;No GE courses were found with the specified criteria.&lt;/p&gt;
           &lt;/div&gt;
         )}
 &nbsp;
-        {!mutation.isLoading &amp;&amp; courses.length &gt; <span class="branch-2 cbranch-no" title="branch not covered" >0 &amp;&amp; (</span>
+        {!mutation.isLoading &amp;&amp; courses.length &gt; 0 &amp;&amp; (
           &lt;GEAreaCoursesTable courses={courses} /&gt;
         )}
       &lt;/div&gt;
@@ -226,7 +226,7 @@ export default function GeneralEducationSearchPage() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-05-28T00:41:42.763Z
+                at 2026-05-28T05:45:24.693Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
